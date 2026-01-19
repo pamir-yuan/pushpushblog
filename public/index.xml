@@ -13,7 +13,7 @@
         <pubDate>Mon, 19 Jan 2026 16:00:00 +0800</pubDate>
         
         <guid>http://localhost:1313/p/%E4%B8%80%E6%96%87%E9%80%9A%E5%85%B3anaconda/</guid>
-        <description>&lt;img src="http://localhost:1313/p/%E4%B8%80%E6%96%87%E9%80%9A%E5%85%B3anaconda/cover.png" alt="Featured image of post 一文通关Anaconda" /&gt;&lt;h1 id=&#34;anacondapython-数据科学的神兵利器&#34;&gt;Anaconda：Python 数据科学的神兵利器
+        <description>&lt;img src="http://localhost:1313/p/%E4%B8%80%E6%96%87%E9%80%9A%E5%85%B3anaconda/cover.webp" alt="Featured image of post 一文通关Anaconda" /&gt;&lt;h1 id=&#34;anacondapython-数据科学的神兵利器&#34;&gt;Anaconda：Python 数据科学的神兵利器
 &lt;/h1&gt;&lt;h2 id=&#34;1-什么是-anaconda&#34;&gt;1. 什么是 Anaconda？
 &lt;/h2&gt;&lt;p&gt;简单来说，如果你需要在 Python 中进行科学计算（如使用 NumPy, PyTorch, TensorFlow），&lt;strong&gt;Anaconda&lt;/strong&gt; 是最省心的环境管理和包管理工具。&lt;/p&gt;
 &lt;blockquote&gt;
@@ -300,18 +300,14 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/%E4%B8%80%E6%96%87%E9%80%9A%E5%85%B3anaconda/condaparse.png&#34;
-	width=&#34;1024&#34;
-	height=&#34;1008&#34;
-	srcset=&#34;http://localhost:1313/p/%E4%B8%80%E6%96%87%E9%80%9A%E5%85%B3anaconda/condaparse_hu_a137f70e3d76e9a.png 480w, http://localhost:1313/p/%E4%B8%80%E6%96%87%E9%80%9A%E5%85%B3anaconda/condaparse_hu_c393550f91f7525f.png 1024w&#34;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/LeeFondCoding/blog-images@main/img/20260119202949269.png&#34;
+	
+	
+	
 	loading=&#34;lazy&#34;
 	
-		alt=&#34;400&#34;
+		alt=&#34;image.png&#34;
 	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;101&#34;
-		data-flex-basis=&#34;243px&#34;
 	
 &gt;&lt;/p&gt;
 </description>

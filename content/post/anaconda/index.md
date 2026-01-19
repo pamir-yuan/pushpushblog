@@ -7,7 +7,7 @@ categories:
   - 技术笔记
 tags:
   - python
-image: "cover.png"
+image: "cover.webp"
 ---
 # Anaconda：Python 数据科学的神兵利器
 
@@ -171,4 +171,4 @@ conda clean --all
     *   Conda 的包是预编译的二进制文件，其中的路径（如 Shebang、RPATH）在编译时是写死的。
     *   在安装到新环境时，Conda 会扫描二进制文件中的特定占位符，将其替换为当前虚拟环境的安装路径 (Prefix)。这使得二进制包可以“可重定位” (Relocatable)。
 
-![400](condaparse.png)
+![image.png](https://cdn.jsdelivr.net/gh/LeeFondCoding/blog-images@main/img/20260119202949269.png)
