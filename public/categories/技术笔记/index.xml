@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>技术笔记 on 我的技术博客</title>
+        <link>http://localhost:1313/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/</link>
+        <description>Recent content in 技术笔记 on 我的技术博客</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>Example Person</copyright>
+        <lastBuildDate>Mon, 19 Jan 2026 16:00:00 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>一文通关Anaconda</title>
+        <link>http://localhost:1313/p/%E4%B8%80%E6%96%87%E9%80%9A%E5%85%B3anaconda/</link>
+        <pubDate>Mon, 19 Jan 2026 16:00:00 +0800</pubDate>
+        
+        <guid>http://localhost:1313/p/%E4%B8%80%E6%96%87%E9%80%9A%E5%85%B3anaconda/</guid>
+        <description>&lt;img src="http://localhost:1313/p/%E4%B8%80%E6%96%87%E9%80%9A%E5%85%B3anaconda/cover.png" alt="Featured image of post 一文通关Anaconda" /&gt;&lt;h1 id=&#34;anacondapython-数据科学的神兵利器&#34;&gt;Anaconda：Python 数据科学的神兵利器
+&lt;/h1&gt;&lt;h2 id=&#34;1-什么是-anaconda&#34;&gt;1. 什么是 Anaconda？
+&lt;/h2&gt;&lt;p&gt;简单来说，如果你需要在 Python 中进行科学计算（如使用 NumPy, PyTorch, TensorFlow），&lt;strong&gt;Anaconda&lt;/strong&gt; 是最省心的环境管理和包管理工具。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;定义&lt;/strong&gt;：Anaconda 本质上是一个面向&lt;strong&gt;数据科学&lt;/strong&gt;、&lt;strong&gt;机器学习&lt;/strong&gt;和科学计算的开源发行版。它以 &lt;strong&gt;Conda&lt;/strong&gt; 为核心，预装了 Python 解释器及众多常用的科学计算包，旨在解决环境配置困难、依赖冲突繁杂等痛点。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;2-为什么需要-anaconda&#34;&gt;2. 为什么需要 Anaconda？
+&lt;/h2&gt;&lt;p&gt;在早期或纯 Python 环境下，进行科学计算开发常面临“三大难题”：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;编译的噩梦&lt;/strong&gt;：科学计算库（如 NumPy, SciPy）底层大量使用 C/C++ 和 Fortran。使用 &lt;code&gt;pip&lt;/code&gt; 从源码安装时，往往需要复杂的编译环境（gcc, gfortran 等），一旦缺失便会报错。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;非 Python 依赖管理&lt;/strong&gt;：&lt;code&gt;pip&lt;/code&gt; 主要是 Python 的包管理器，难以管理非 Python 的库（如 CUDA, HDF5, MKL 等系统级依赖）。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;环境隔离与依赖冲突&lt;/strong&gt;：不同项目往往需要不同版本的库。虽然 Python 有 &lt;code&gt;venv&lt;/code&gt;，但在处理复杂的科学计算依赖树时，往往力不从心。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;Anaconda 的解决方案&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;预编译二进制包&lt;/strong&gt;：直接分发编译好的二进制文件（Binaries），无需本地编译，开箱即用。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;跨语言包管理&lt;/strong&gt;：Conda 不仅管理 Python 包，还能管理 C/C++, R 等语言的依赖。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;环境隔离&lt;/strong&gt;：提供强大的环境管理功能，轻松创建独立的虚拟环境。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;3-anaconda-生态矩阵&#34;&gt;3. Anaconda 生态矩阵
+&lt;/h2&gt;&lt;p&gt;很多人容易混淆 Anaconda、Conda、Miniconda 等概念，这里理清一下：&lt;/p&gt;
+&lt;h3 id=&#34;31-核心工具&#34;&gt;3.1 核心工具
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Conda&lt;/strong&gt;：核心的命令行工具。它是跨平台（Windows, macOS, Linux）、跨语言的包管理器和环境管理器。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;32-发行版&#34;&gt;3.2 发行版
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Anaconda Distribution&lt;/strong&gt;：官方“全家桶”。包含 Conda、Python 以及 700+ 预装的科学计算包。优点是省心，缺点是体积巨大（几 GB）。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Miniconda&lt;/strong&gt;：官方“精简版”。只包含 Conda、Python 和基础依赖。按需安装，体积小。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Miniforge&lt;/strong&gt;：社区驱动版。类似于 Miniconda，但默认配置为 &lt;strong&gt;conda-forge&lt;/strong&gt; 通道（社区维护的包仓库），且不仅对个人免费，对商业使用也更加友好（规避了 Anaconda 官方频道的商业授权限制）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;33-加速与增强&#34;&gt;3.3 加速与增强
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Mamba&lt;/strong&gt;：Conda 的 C++ 重写版。极大地提升了依赖解析（Solver）的速度，解决了 Conda 在复杂环境中“解析慢”的老大难问题。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Channel（通道）&lt;/strong&gt;：相当于软件源。
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;defaults&lt;/code&gt;：Anaconda 官方维护，稳定但更新稍慢，商业使用需付费。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;conda-forge&lt;/code&gt;：社区维护，更新快，包全，免费。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;4-选型对比conda-vs-pip-vs-uv&#34;&gt;4. 选型对比：Conda vs pip vs uv
+&lt;/h2&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;特性&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;pip + venv&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Conda / Mamba&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;UV (Rust based)&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;定位&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Python 原生标准&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;跨语言科学计算全能&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;新一代极速 Python 工具&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;速度&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;一般&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;慢 (Conda) / 快 (Mamba)&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;极快&lt;/strong&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;依赖处理&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;主要处理 Python 包&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Python + 系统库 (C/C++, R)&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;目前主要是 Python&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;二进制支持&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;依赖 Wheel，部分需编译&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;优秀&lt;/strong&gt; (预编译库丰富)&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;兼容 pip Wheel&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;适用场景&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Web 开发、轻量脚本&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;数据科学、AI、复杂环境&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Web 开发、追求极致速度&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;缺点&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;科学计算环境配置繁琐&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;体积大、解析慢 (Conda)&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;生态相对较新&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;5-安装与配置&#34;&gt;5. 安装与配置
+&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;推荐方案：&lt;strong&gt;Miniforge&lt;/strong&gt; (轻量、免费、速度快)。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;51-安装-macos-示例&#34;&gt;5.1 安装 (macOS 示例)
+&lt;/h3&gt;&lt;p&gt;使用 Homebrew 安装：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;brew install miniforge
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;安装后需初始化 shell（通常安装程序会自动完成，若未完成可执行 &lt;code&gt;conda init zsh&lt;/code&gt;）。&lt;/p&gt;
+&lt;h3 id=&#34;52-配置国内镜像源&#34;&gt;5.2 配置国内镜像源
+&lt;/h3&gt;&lt;p&gt;为了加速下载，建议配置清华大学或阿里云镜像。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;方法一：命令行配置&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 1. 设置 channel_priority 为 flexible，避免 strict 导致的依赖错误&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;conda config --set channel_priority flexible
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 2. 添加清华镜像源 (以 conda-forge 为例，推荐优先使用)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/msys2/
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/bioconda/
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/menpo/
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 3. 显示下载地址，便于排查&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;conda config --set show_channel_urls yes
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;strong&gt;方法二：直接编辑 &lt;code&gt;~/.condarc&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;channels&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;- &lt;span class=&#34;l&#34;&gt;https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;- &lt;span class=&#34;l&#34;&gt;defaults&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;show_channel_urls&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kc&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;default_channels&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;- &lt;span class=&#34;l&#34;&gt;https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;- &lt;span class=&#34;l&#34;&gt;https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;custom_channels&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;conda-forge&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;pytorch&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;6-常用命令速查&#34;&gt;6. 常用命令速查
+&lt;/h2&gt;&lt;h3 id=&#34;环境管理&#34;&gt;环境管理
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 创建环境 (指定 Python 版本)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;conda create -n my_env &lt;span class=&#34;nv&#34;&gt;python&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;3.9
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 激活环境&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;conda activate my_env
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 退出环境&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;conda deactivate
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 查看所有环境&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;conda env list
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 删除环境&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;conda remove -n my_env --all
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 导出环境配置&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;conda env &lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &amp;gt; environment.yml
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 从配置文件创建环境&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;conda env create -f environment.yml
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;包管理&#34;&gt;包管理
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 安装包&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;conda install numpy pandas
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 指定版本安装&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;conda install &lt;span class=&#34;nv&#34;&gt;pytorch&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;1.10
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 搜索包&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;conda search scipy
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 移除包&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;conda remove numpy
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 清理缓存 (释放磁盘空间)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;conda clean --all
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;7-工作原理conda-install-发生了什么&#34;&gt;7. 工作原理：&lt;code&gt;conda install&lt;/code&gt; 发生了什么？
+&lt;/h2&gt;&lt;p&gt;当你运行 &lt;code&gt;conda install numpy&lt;/code&gt; 时，Conda 会经历以下关键步骤：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;获取元数据 (Fetch Metadata)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Conda 读取配置文件 (&lt;code&gt;.condarc&lt;/code&gt;) 确定 Channel。&lt;/li&gt;
+&lt;li&gt;下载或更新各 Channel 的索引文件 (&lt;code&gt;repodata.json&lt;/code&gt;)，其中包含所有包的版本、依赖关系和构建信息。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;依赖求解 (Dependency Solving)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Conda 使用 SAT求解器 (Satisfiability Solver) 分析当前环境和目标包的依赖树。&lt;/li&gt;
+&lt;li&gt;计算出一个满足所有版本限制的安装/升级/降级方案。这是 Conda 最耗时的步骤 (Mamba 对此进行了极大优化)。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;下载与解压 (Download &amp;amp; Extract)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;下载对应的二进制包 (通常是 &lt;code&gt;.tar.bz2&lt;/code&gt; 或 &lt;code&gt;.conda&lt;/code&gt; 格式)。&lt;/li&gt;
+&lt;li&gt;校验哈希值，确保存储库安全。&lt;/li&gt;
+&lt;li&gt;将包解压到 Conda 的全局包缓存目录 (&lt;code&gt;pkgs/&lt;/code&gt;)。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;链接 (Linking)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;硬链接 (Hard Links)&lt;/strong&gt;：Conda 不会将包直接复制到你的虚拟环境中，而是从缓存目录创建“硬链接”到虚拟环境目录。这使得不同环境复用同一个包文件，极大地节省了磁盘空间。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;前缀替换 (Prefix Replacement)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Conda 的包是预编译的二进制文件，其中的路径（如 Shebang、RPATH）在编译时是写死的。&lt;/li&gt;
+&lt;li&gt;在安装到新环境时，Conda 会扫描二进制文件中的特定占位符，将其替换为当前虚拟环境的安装路径 (Prefix)。这使得二进制包可以“可重定位” (Relocatable)。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/%E4%B8%80%E6%96%87%E9%80%9A%E5%85%B3anaconda/condaparse.png&#34;
+	width=&#34;1024&#34;
+	height=&#34;1008&#34;
+	srcset=&#34;http://localhost:1313/p/%E4%B8%80%E6%96%87%E9%80%9A%E5%85%B3anaconda/condaparse_hu_a137f70e3d76e9a.png 480w, http://localhost:1313/p/%E4%B8%80%E6%96%87%E9%80%9A%E5%85%B3anaconda/condaparse_hu_c393550f91f7525f.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;400&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;101&#34;
+		data-flex-basis=&#34;243px&#34;
+	
+&gt;&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

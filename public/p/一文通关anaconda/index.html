@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Anaconda的详细介绍">
+<title>一文通关Anaconda</title>
+
+<link rel='canonical' href='http://localhost:1313/p/%E4%B8%80%E6%96%87%E9%80%9A%E5%85%B3anaconda/'>
+
+<link rel="stylesheet" href="/scss/style.min.833d6eed45de56f48306bf57268d5b8cdfc8a60e8e7bdc99810464fcd033f7c6.css"><meta property='og:title' content="一文通关Anaconda">
+<meta property='og:description' content="Anaconda的详细介绍">
+<meta property='og:url' content='http://localhost:1313/p/%E4%B8%80%E6%96%87%E9%80%9A%E5%85%B3anaconda/'>
+<meta property='og:site_name' content='我的技术博客'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='python' /><meta property='article:published_time' content='2026-01-19T16:00:00&#43;08:00'/><meta property='article:modified_time' content='2026-01-19T16:00:00&#43;08:00'/><meta property='og:image' content='http://localhost:1313/p/%E4%B8%80%E6%96%87%E9%80%9A%E5%85%B3anaconda/cover.png' />
+<meta name="twitter:title" content="一文通关Anaconda">
+<meta name="twitter:description" content="Anaconda的详细介绍"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='http://localhost:1313/p/%E4%B8%80%E6%96%87%E9%80%9A%E5%85%B3anaconda/cover.png' />
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu_b5976aa1afdc1d2e.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">我的技术博客</a></h1>
+            <h2 class="site-description">Golang后端程序员，正在学习DL</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/CaiJimmy/hugo-theme-stack'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    
+                        <li id="i18n-switch">  
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                                
+                                    <option value="http://localhost:1313/" selected>简体中文</option>
+                                
+                                    <option value="http://localhost:1313/en/" >English</option>
+                                
+                                    <option value="http://localhost:1313/ja/" >日本語</option>
+                                
+                                    <option value="http://localhost:1313/zh-tw/" >正體中文</option>
+                                
+                                    <option value="http://localhost:1313/ar/" >عربي</option>
+                                
+                            </select>
+                        </li>
+                    
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#1-什么是-anaconda">1. 什么是 Anaconda？</a></li>
+    <li><a href="#2-为什么需要-anaconda">2. 为什么需要 Anaconda？</a></li>
+    <li><a href="#3-anaconda-生态矩阵">3. Anaconda 生态矩阵</a>
+      <ol>
+        <li><a href="#31-核心工具">3.1 核心工具</a></li>
+        <li><a href="#32-发行版">3.2 发行版</a></li>
+        <li><a href="#33-加速与增强">3.3 加速与增强</a></li>
+      </ol>
+    </li>
+    <li><a href="#4-选型对比conda-vs-pip-vs-uv">4. 选型对比：Conda vs pip vs uv</a></li>
+    <li><a href="#5-安装与配置">5. 安装与配置</a>
+      <ol>
+        <li><a href="#51-安装-macos-示例">5.1 安装 (macOS 示例)</a></li>
+        <li><a href="#52-配置国内镜像源">5.2 配置国内镜像源</a></li>
+      </ol>
+    </li>
+    <li><a href="#6-常用命令速查">6. 常用命令速查</a>
+      <ol>
+        <li><a href="#环境管理">环境管理</a></li>
+        <li><a href="#包管理">包管理</a></li>
+      </ol>
+    </li>
+    <li><a href="#7-工作原理conda-install-发生了什么">7. 工作原理：<code>conda install</code> 发生了什么？</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/%E4%B8%80%E6%96%87%E9%80%9A%E5%85%B3anaconda/">
+                <img src="/p/%E4%B8%80%E6%96%87%E9%80%9A%E5%85%B3anaconda/cover_hu_edb382edb30ec52d.png"
+                        srcset="/p/%E4%B8%80%E6%96%87%E9%80%9A%E5%85%B3anaconda/cover_hu_edb382edb30ec52d.png 800w, /p/%E4%B8%80%E6%96%87%E9%80%9A%E5%85%B3anaconda/cover_hu_9b8e9e29b278f706.png 1600w"
+                        width="800" 
+                        height="396" 
+                        loading="lazy"
+                        alt="Featured image of post 一文通关Anaconda" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/" >
+                技术笔记
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/%E4%B8%80%E6%96%87%E9%80%9A%E5%85%B3anaconda/">一文通关Anaconda</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            Anaconda的详细介绍
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published" datetime='2026-01-19T16:00:00&#43;08:00'>Jan 19, 2026</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 3 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="anacondapython-数据科学的神兵利器">Anaconda：Python 数据科学的神兵利器
+</h1><h2 id="1-什么是-anaconda">1. 什么是 Anaconda？
+</h2><p>简单来说，如果你需要在 Python 中进行科学计算（如使用 NumPy, PyTorch, TensorFlow），<strong>Anaconda</strong> 是最省心的环境管理和包管理工具。</p>
+<blockquote>
+<p><strong>定义</strong>：Anaconda 本质上是一个面向<strong>数据科学</strong>、<strong>机器学习</strong>和科学计算的开源发行版。它以 <strong>Conda</strong> 为核心，预装了 Python 解释器及众多常用的科学计算包，旨在解决环境配置困难、依赖冲突繁杂等痛点。</p>
+</blockquote>
+<h2 id="2-为什么需要-anaconda">2. 为什么需要 Anaconda？
+</h2><p>在早期或纯 Python 环境下，进行科学计算开发常面临“三大难题”：</p>
+<ol>
+<li><strong>编译的噩梦</strong>：科学计算库（如 NumPy, SciPy）底层大量使用 C/C++ 和 Fortran。使用 <code>pip</code> 从源码安装时，往往需要复杂的编译环境（gcc, gfortran 等），一旦缺失便会报错。</li>
+<li><strong>非 Python 依赖管理</strong>：<code>pip</code> 主要是 Python 的包管理器，难以管理非 Python 的库（如 CUDA, HDF5, MKL 等系统级依赖）。</li>
+<li><strong>环境隔离与依赖冲突</strong>：不同项目往往需要不同版本的库。虽然 Python 有 <code>venv</code>，但在处理复杂的科学计算依赖树时，往往力不从心。</li>
+</ol>
+<p><strong>Anaconda 的解决方案</strong>：</p>
+<ul>
+<li><strong>预编译二进制包</strong>：直接分发编译好的二进制文件（Binaries），无需本地编译，开箱即用。</li>
+<li><strong>跨语言包管理</strong>：Conda 不仅管理 Python 包，还能管理 C/C++, R 等语言的依赖。</li>
+<li><strong>环境隔离</strong>：提供强大的环境管理功能，轻松创建独立的虚拟环境。</li>
+</ul>
+<h2 id="3-anaconda-生态矩阵">3. Anaconda 生态矩阵
+</h2><p>很多人容易混淆 Anaconda、Conda、Miniconda 等概念，这里理清一下：</p>
+<h3 id="31-核心工具">3.1 核心工具
+</h3><ul>
+<li><strong>Conda</strong>：核心的命令行工具。它是跨平台（Windows, macOS, Linux）、跨语言的包管理器和环境管理器。</li>
+</ul>
+<h3 id="32-发行版">3.2 发行版
+</h3><ul>
+<li><strong>Anaconda Distribution</strong>：官方“全家桶”。包含 Conda、Python 以及 700+ 预装的科学计算包。优点是省心，缺点是体积巨大（几 GB）。</li>
+<li><strong>Miniconda</strong>：官方“精简版”。只包含 Conda、Python 和基础依赖。按需安装，体积小。</li>
+<li><strong>Miniforge</strong>：社区驱动版。类似于 Miniconda，但默认配置为 <strong>conda-forge</strong> 通道（社区维护的包仓库），且不仅对个人免费，对商业使用也更加友好（规避了 Anaconda 官方频道的商业授权限制）。</li>
+</ul>
+<h3 id="33-加速与增强">3.3 加速与增强
+</h3><ul>
+<li><strong>Mamba</strong>：Conda 的 C++ 重写版。极大地提升了依赖解析（Solver）的速度，解决了 Conda 在复杂环境中“解析慢”的老大难问题。</li>
+<li><strong>Channel（通道）</strong>：相当于软件源。
+<ul>
+<li><code>defaults</code>：Anaconda 官方维护，稳定但更新稍慢，商业使用需付费。</li>
+<li><code>conda-forge</code>：社区维护，更新快，包全，免费。</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-选型对比conda-vs-pip-vs-uv">4. 选型对比：Conda vs pip vs uv
+</h2><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th style="text-align: left">特性</th>
+          <th style="text-align: left">pip + venv</th>
+          <th style="text-align: left">Conda / Mamba</th>
+          <th style="text-align: left">UV (Rust based)</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>定位</strong></td>
+          <td style="text-align: left">Python 原生标准</td>
+          <td style="text-align: left">跨语言科学计算全能</td>
+          <td style="text-align: left">新一代极速 Python 工具</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>速度</strong></td>
+          <td style="text-align: left">一般</td>
+          <td style="text-align: left">慢 (Conda) / 快 (Mamba)</td>
+          <td style="text-align: left"><strong>极快</strong></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>依赖处理</strong></td>
+          <td style="text-align: left">主要处理 Python 包</td>
+          <td style="text-align: left">Python + 系统库 (C/C++, R)</td>
+          <td style="text-align: left">目前主要是 Python</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>二进制支持</strong></td>
+          <td style="text-align: left">依赖 Wheel，部分需编译</td>
+          <td style="text-align: left"><strong>优秀</strong> (预编译库丰富)</td>
+          <td style="text-align: left">兼容 pip Wheel</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>适用场景</strong></td>
+          <td style="text-align: left">Web 开发、轻量脚本</td>
+          <td style="text-align: left"><strong>数据科学、AI、复杂环境</strong></td>
+          <td style="text-align: left">Web 开发、追求极致速度</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>缺点</strong></td>
+          <td style="text-align: left">科学计算环境配置繁琐</td>
+          <td style="text-align: left">体积大、解析慢 (Conda)</td>
+          <td style="text-align: left">生态相对较新</td>
+      </tr>
+  </tbody>
+</table></div>
+<h2 id="5-安装与配置">5. 安装与配置
+</h2><blockquote>
+<p>推荐方案：<strong>Miniforge</strong> (轻量、免费、速度快)。</p>
+</blockquote>
+<h3 id="51-安装-macos-示例">5.1 安装 (macOS 示例)
+</h3><p>使用 Homebrew 安装：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">brew install miniforge
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>安装后需初始化 shell（通常安装程序会自动完成，若未完成可执行 <code>conda init zsh</code>）。</p>
+<h3 id="52-配置国内镜像源">5.2 配置国内镜像源
+</h3><p>为了加速下载，建议配置清华大学或阿里云镜像。</p>
+<p><strong>方法一：命令行配置</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 1. 设置 channel_priority 为 flexible，避免 strict 导致的依赖错误</span>
+</span></span><span class="line"><span class="cl">conda config --set channel_priority flexible
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 2. 添加清华镜像源 (以 conda-forge 为例，推荐优先使用)</span>
+</span></span><span class="line"><span class="cl">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/
+</span></span><span class="line"><span class="cl">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/msys2/
+</span></span><span class="line"><span class="cl">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/bioconda/
+</span></span><span class="line"><span class="cl">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/menpo/
+</span></span><span class="line"><span class="cl">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 3. 显示下载地址，便于排查</span>
+</span></span><span class="line"><span class="cl">conda config --set show_channel_urls yes
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>方法二：直接编辑 <code>~/.condarc</code></strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">channels</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="l">https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="l">defaults</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">show_channel_urls</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">default_channels</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="l">https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="l">https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">custom_channels</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">conda-forge</span><span class="p">:</span><span class="w"> </span><span class="l">https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">pytorch</span><span class="p">:</span><span class="w"> </span><span class="l">https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="6-常用命令速查">6. 常用命令速查
+</h2><h3 id="环境管理">环境管理
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 创建环境 (指定 Python 版本)</span>
+</span></span><span class="line"><span class="cl">conda create -n my_env <span class="nv">python</span><span class="o">=</span>3.9
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 激活环境</span>
+</span></span><span class="line"><span class="cl">conda activate my_env
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 退出环境</span>
+</span></span><span class="line"><span class="cl">conda deactivate
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看所有环境</span>
+</span></span><span class="line"><span class="cl">conda env list
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 删除环境</span>
+</span></span><span class="line"><span class="cl">conda remove -n my_env --all
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 导出环境配置</span>
+</span></span><span class="line"><span class="cl">conda env <span class="nb">export</span> &gt; environment.yml
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 从配置文件创建环境</span>
+</span></span><span class="line"><span class="cl">conda env create -f environment.yml
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="包管理">包管理
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 安装包</span>
+</span></span><span class="line"><span class="cl">conda install numpy pandas
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 指定版本安装</span>
+</span></span><span class="line"><span class="cl">conda install <span class="nv">pytorch</span><span class="o">=</span>1.10
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 搜索包</span>
+</span></span><span class="line"><span class="cl">conda search scipy
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 移除包</span>
+</span></span><span class="line"><span class="cl">conda remove numpy
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 清理缓存 (释放磁盘空间)</span>
+</span></span><span class="line"><span class="cl">conda clean --all
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="7-工作原理conda-install-发生了什么">7. 工作原理：<code>conda install</code> 发生了什么？
+</h2><p>当你运行 <code>conda install numpy</code> 时，Conda 会经历以下关键步骤：</p>
+<ol>
+<li>
+<p><strong>获取元数据 (Fetch Metadata)</strong></p>
+<ul>
+<li>Conda 读取配置文件 (<code>.condarc</code>) 确定 Channel。</li>
+<li>下载或更新各 Channel 的索引文件 (<code>repodata.json</code>)，其中包含所有包的版本、依赖关系和构建信息。</li>
+</ul>
+</li>
+<li>
+<p><strong>依赖求解 (Dependency Solving)</strong></p>
+<ul>
+<li>Conda 使用 SAT求解器 (Satisfiability Solver) 分析当前环境和目标包的依赖树。</li>
+<li>计算出一个满足所有版本限制的安装/升级/降级方案。这是 Conda 最耗时的步骤 (Mamba 对此进行了极大优化)。</li>
+</ul>
+</li>
+<li>
+<p><strong>下载与解压 (Download &amp; Extract)</strong></p>
+<ul>
+<li>下载对应的二进制包 (通常是 <code>.tar.bz2</code> 或 <code>.conda</code> 格式)。</li>
+<li>校验哈希值，确保存储库安全。</li>
+<li>将包解压到 Conda 的全局包缓存目录 (<code>pkgs/</code>)。</li>
+</ul>
+</li>
+<li>
+<p><strong>链接 (Linking)</strong></p>
+<ul>
+<li><strong>硬链接 (Hard Links)</strong>：Conda 不会将包直接复制到你的虚拟环境中，而是从缓存目录创建“硬链接”到虚拟环境目录。这使得不同环境复用同一个包文件，极大地节省了磁盘空间。</li>
+</ul>
+</li>
+<li>
+<p><strong>前缀替换 (Prefix Replacement)</strong></p>
+<ul>
+<li>Conda 的包是预编译的二进制文件，其中的路径（如 Shebang、RPATH）在编译时是写死的。</li>
+<li>在安装到新环境时，Conda 会扫描二进制文件中的特定占位符，将其替换为当前虚拟环境的安装路径 (Prefix)。这使得二进制包可以“可重定位” (Relocatable)。</li>
+</ul>
+</li>
+</ol>
+<p><img src="/p/%E4%B8%80%E6%96%87%E9%80%9A%E5%85%B3anaconda/condaparse.png"
+	width="1024"
+	height="1008"
+	srcset="/p/%E4%B8%80%E6%96%87%E9%80%9A%E5%85%B3anaconda/condaparse_hu_a137f70e3d76e9a.png 480w, /p/%E4%B8%80%E6%96%87%E9%80%9A%E5%85%B3anaconda/condaparse_hu_c393550f91f7525f.png 1024w"
+	loading="lazy"
+	
+		alt="400"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="101"
+		data-flex-basis="243px"
+	
+></p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/python/">Python</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "hugo-theme-stack" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (typeof DISQUS == 'object') {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2026 Example Person
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.33.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+    
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.f2b34bcb9ac083e987d2fe010865d6692af585e11f2293117e25ba39d92c5eed.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
