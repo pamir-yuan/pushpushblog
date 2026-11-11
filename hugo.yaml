@@ -1,4 +1,4 @@
-baseurl: https://pushpushblog.pages.dev/
+baseurl: https://pamiryuan.pages.dev/
 languageCode: zh-cn
 theme: hugo-theme-stack
 title: "Paer's blog"
@@ -283,3 +283,4 @@ markup:
         lineNos: true
         lineNumbersInTable: true
         tabWidth: 4
+
