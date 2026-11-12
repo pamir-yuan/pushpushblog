@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.astro/
+src/content/blog/
+site-assets/p/
+site-assets/vh-search.json
+.DS_Store

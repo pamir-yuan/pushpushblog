@@ -1,0 +1,6 @@
+---
+import Layout from '@/layouts/Layout/Layout.astro';
+import { getTags } from '@/utils/getPostInfo';
+const entries = getTags();
+---
+<Layout title="标签" description="按标签浏览文章"><section style="padding:2rem;background:white;border-radius:1rem"><h1>标签</h1><ul style="line-height:2.5">{entries.map(item => { const name = Array.isArray(item) ? item[0] : item.title; const count = Array.isArray(item) ? item[1] : item.count; return <li><a href={`/tag/${name}/`}>{name} · {count}</a></li>; })}</ul></section></Layout>

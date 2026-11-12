@@ -1,0 +1,7 @@
+/tags/* /tag/:splat 301
+/sitemap.xml /sitemap-index.xml 301
+/en/* / 301
+/ja/* / 301
+/ar/* / 301
+/zh-tw/* / 301
+/p/ / 301

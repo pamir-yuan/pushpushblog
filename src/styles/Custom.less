@@ -1,0 +1,33 @@
+// Personal adaptation of vhAstro; keep the selected banner, cards and sidebar.
+:focus-visible { outline: 2px solid var(--vh-main-color); outline-offset: 4px; }
+.header-main > .auther { text-shadow: 0 2px 16px #0008; }
+.header-main > .desc { text-shadow: 0 1px 8px #0008; }
+.article-list-main > section.article-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.article-list-main .vh-article-item > header .title { line-height: 1.55; min-height: 3.1em; }
+.article-list-main .vh-article-item > .vh-article-banner { height: auto; aspect-ratio: 16 / 9; display: block; background: #f3f4f2; }
+.article-list-main .vh-article-item > .vh-article-banner > img { width: 100%; height: 100%; object-fit: contain; }
+article.vh-article-main > header { padding: 2rem 2rem 1rem; }
+article.vh-article-main > header > h1 { line-height: 1.5; margin: 0 0 1rem; }
+article.vh-article-main > main { padding: 1rem 2rem 2rem; line-height: 1.9; }
+article.vh-article-main > main .post-cover { width: 100%; max-height: 32rem; object-fit: contain; border-radius: .6rem; margin: 0 0 1.5rem; }
+.inner-page .header-main { height: 13rem; }
+.inner-page .header-main > .avatar { width: 4rem; height: 4rem; margin-top: 3rem; }
+.inner-page .header-main > .auther { padding: 0; font-size: 1.4rem; }
+.inner-page .header-main > .desc { display: none; }
+.vh-footer { color: #78848c; }
+.vh-footer > main { padding: 2rem 1rem; line-height: 1.8; }
+.vh-footer a { color: inherit; }
+@media (max-width: 888px) { .article-list-main > section.article-list { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) {
+  .header-main { height: 26rem; }
+  .article-list-main > section.article-list { grid-template-columns: 1fr; }
+  article.vh-article-main > header, article.vh-article-main > main { padding: 1.2rem; }
+  article.vh-article-main > header > .article-meta { flex-wrap: wrap; height: auto; line-height: 1.7; gap: .5rem; }
+  html, body, article { user-select: text !important; -webkit-user-select: text !important; }
+}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; } .vh-animation.vh-animation-init { opacity: 1; } }
+
+.vh-header button.nav-link { background: none; border: 0; padding: 0; font: inherit; color: inherit; cursor: pointer; }
+.article-toc { border: 1px solid #e6e9ec; border-radius: .6rem; padding: .7rem 1rem; margin-bottom: 1.5rem; }
+.article-toc summary { cursor: pointer; font-weight: 600; }
+.article-toc nav ul { margin: .5rem 0; list-style: none; padding: 0; }

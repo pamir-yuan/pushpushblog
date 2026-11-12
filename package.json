@@ -1,0 +1,44 @@
+{
+  "name": "lichun-blog",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "prepare:content": "node scripts/prepare-content.mjs",
+    "dev": "npm run prepare:content && astro dev",
+    "build": "npm run prepare:content && astro build",
+    "preview": "astro preview",
+    "check:site": "node scripts/check-site.mjs"
+  },
+  "dependencies": {
+    "@astrojs/rss": "^4.0.12",
+    "@astrojs/sitemap": "^3.6.0",
+    "@swup/astro": "^1.7.0",
+    "astro": "^5.13.10",
+    "overlayscrollbars": "^2.12.0",
+    "gray-matter": "^4.0.3"
+  },
+  "devDependencies": {
+    "cheerio": "^1.1.2",
+    "dayjs": "^1.11.18",
+    "less": "^4.4.1",
+    "mdast-util-to-string": "^4.0.0",
+    "reading-time": "^1.5.0",
+    "rehype-katex": "^7.0.1",
+    "rehype-slug": "^6.0.0",
+    "remark-directive": "^4.0.0",
+    "remark-math": "^6.0.0",
+    "typescript": "^5.9.2",
+    "unist-util-visit": "^5.0.0"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "sharp",
+      "swup"
+    ]
+  },
+  "private": true,
+  "engines": {
+    "node": ">=22.12.0"
+  }
+}
