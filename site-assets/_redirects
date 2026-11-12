@@ -1,3 +1,9 @@
+/tags/agent /tag/Agent/ 301
+/tags/agent/ /tag/Agent/ 301
+/tags/agent-skills /tag/Agent%20Skills/ 301
+/tags/agent-skills/ /tag/Agent%20Skills/ 301
+/tags/hugo /tag/Hugo/ 301
+/tags/hugo/ /tag/Hugo/ 301
 /tags/* /tag/:splat 301
 /sitemap.xml /sitemap-index.xml 301
 /en/* / 301
