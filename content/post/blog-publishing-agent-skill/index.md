@@ -12,6 +12,8 @@ tags:
   - Hugo
 toc: true
 isCJKLanguage: true
+image: "cover-notion.webp"
+lastmod: 2026-11-12T12:00:49+08:00
 ---
 
 发一篇博客，看起来只需要把 Markdown 放进仓库，再提交一次。
@@ -40,7 +42,7 @@ isCJKLanguage: true
 
 这里最容易省掉的是最后一步。GitHub 上出现新文件，只能证明源文件已经提交；Cloudflare 显示构建成功，也还需要打开正式站，确认读者能看到正确的内容。
 
-![博客发布的三个验收阶段：仓库内容、对应部署、正式站结果](release-checks.svg)
+![博客发布的三层验收：仓库内容、对应部署、正式站结果](release-checks-notion.webp)
 
 因此，我给 Skill 定的完成条件是：**找到本次提交，确认它在目标项目部署成功，再核对正式站的实际内容。**
 
@@ -60,6 +62,8 @@ blog-publisher/
 ```
 
 `SKILL.md` 写发布步骤，`references/site.md` 写站点约定。以后换域名、换部署项目，可以集中修改站点资料。
+
+![发布 Skill 的组成：核心步骤、站点参考、可选脚本与文章模板](skill-structure-notion.webp)
 
 下面是一份可以照着填写的 `site.md`。仓库和域名使用示例值，实际使用前替换成自己的配置：
 
