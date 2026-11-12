@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="636" viewBox="0 0 600 636" role="img" aria-labelledby="title desc">
+  <title id="title">博客发布的三个验收阶段</title>
+  <desc id="desc">依次核对仓库内容、本次提交对应的部署，以及正式站的实际结果。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="5" refY="4" orient="auto"><path d="M0 0L6 4L0 8" fill="none" stroke="#7b8796" stroke-width="1.5"/></marker>
+  </defs>
+  <rect width="600" height="636" rx="24" fill="#f4f6f8"/>
+  <g font-family="system-ui, -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+    <text x="44" y="57" font-size="29" font-weight="650" fill="#172331">发布后的三层检查</text>
+    <rect x="40" y="92" width="520" height="132" rx="16" fill="white" stroke="#dce3ea"/>
+    <circle cx="88" cy="139" r="21" fill="#e8eefb"/><text x="88" y="147" text-anchor="middle" font-size="23" font-weight="600" fill="#345bb2">1</text>
+    <text x="126" y="147" font-size="27" font-weight="600" fill="#172331">仓库内容</text>
+    <text x="70" y="193" font-size="25" fill="#536273">核对文件，记录本次提交 SHA</text>
+    <path d="M300 233V264" stroke="#7b8796" stroke-width="2" marker-end="url(#arrow)"/>
+    <rect x="40" y="278" width="520" height="132" rx="16" fill="white" stroke="#dce3ea"/>
+    <circle cx="88" cy="325" r="21" fill="#e8eefb"/><text x="88" y="333" text-anchor="middle" font-size="23" font-weight="600" fill="#345bb2">2</text>
+    <text x="126" y="333" font-size="27" font-weight="600" fill="#172331">对应部署</text>
+    <text x="70" y="379" font-size="25" fill="#536273">目标项目成功部署本次提交</text>
+    <path d="M300 419V450" stroke="#7b8796" stroke-width="2" marker-end="url(#arrow)"/>
+    <rect x="40" y="464" width="520" height="132" rx="16" fill="white" stroke="#c8ddcf"/>
+    <circle cx="88" cy="511" r="21" fill="#e5f3e9"/><text x="88" y="519" text-anchor="middle" font-size="23" font-weight="600" fill="#287743">3</text>
+    <text x="126" y="519" font-size="27" font-weight="600" fill="#172331">正式站结果</text>
+    <text x="70" y="565" font-size="25" fill="#536273">核对文章、图片、首页及 RSS</text>
+  </g>
+</svg>
