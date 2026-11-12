@@ -12,8 +12,8 @@ tags:
   - Hugo
 toc: true
 isCJKLanguage: true
-image: "cover-notion.webp"
-lastmod: 2026-11-12T12:00:49+08:00
+image: "cover-notion-banner.webp"
+lastmod: 2026-11-12T12:07:49+08:00
 ---
 
 发一篇博客，看起来只需要把 Markdown 放进仓库，再提交一次。
